@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Tweet Nothing",
+  "description": "Removes Content from all tweets in your feed.",
+  "version": "0.2",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Disable Tweets"
+  },
+  "content_scripts": [
+   {
+     "matches": ["http://www.twitter.com/*", "https://twitter.com/*"],
+     "js": ["jquery.js", "contentScript.js"],
+     "run_at": "document_end"
+   }
+ ],
+  "permissions": [
+          "http://twitter.com/","https://twitter.com/","tabs","activeTab"
+        ]
+}
